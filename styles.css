@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#books {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 5px;
+}
+
+.book {
+    height: 200px;
+    width: 200px;
+    background-color: teal;
+}
