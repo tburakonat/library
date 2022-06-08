@@ -8,6 +8,23 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Buraks Library</h1>
+    <button class="add-book">New Book</button>
+    <div class="modal">
+        <h2>Add a new book</h2>
+        <form>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author">
+            <label for="pages">Pages</label>
+            <input type="number" id="pages">
+            <label for="isRead">Already Read?</label>
+            <input type="checkbox" name="isRead" id="isRead">
+            <button>Add Book To Library</button>
+        </form>
+    </div>
+    <section id="books"></section>
     
     <script src="script.js"></script>
 </body>
