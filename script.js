@@ -73,9 +73,17 @@ function toggleRead(e) {
     const bookCard = btn.closest(".book-card")
     btn.classList.toggle("read")
     const bookTitle = bookCard.children[0].textContent
-    const book = library.find(book => '"' + book.title + '"' == bookTitle)
-    book.isRead = !book.isRead
-    btn.textContent = book.isRead ? "Read" : "Not Read"
+    let newLibrary = []
+    library.forEach(book => {
+        if ('"' + book.title + '"' == bookTitle) {
+            book.isRead = !book.isRead
+            btn.textContent = book.isRead ? "Read" : "Not Read"
+            newLibrary.push(book)
+        } else {
+            newLibrary.push(book)
+        }
+    })
+    localStorage.setItem("library", JSON.stringify(newLibrary))
 }
 
 function updateLocalStorage(newBook) {
