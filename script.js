@@ -14,6 +14,7 @@ function addBookToLibrary(bookInformation) {
     const {title, author, pages, isRead} = bookInformation
     const newBook = new Book(title, author, pages, isRead)
     library.push(newBook)
+    updateLocalStorage(newBook)
     displayBook(newBook)
 }
 
@@ -77,6 +78,25 @@ function toggleRead(e) {
     btn.textContent = book.isRead ? "Read" : "Not Read"
 }
 
+function updateLocalStorage(newBook) {
+    if (localStorage.key("library")) {
+        let oldLibrary = JSON.parse(localStorage.getItem("library"))
+        oldLibrary.push(newBook)
+        localStorage.setItem("library", JSON.stringify(oldLibrary))
+    }
+    localStorage.setItem("library", JSON.stringify(library))
+}
+
+function loadLocalStorage() {
+    if (!localStorage.key("library")) return
+    let localLibrary = JSON.parse(localStorage.getItem("library"))
+    localLibrary.forEach(book => addBookToLibrary(book))
+}
+
+window.addEventListener("load", () => {
+    loadLocalStorage()
+})
+
 // Helper Function To Fill The Page
 function addBooks(num = 6) {
     for (let i = 0; i < num; i++) {
@@ -85,7 +105,7 @@ function addBooks(num = 6) {
         addBookToLibrary({title: `Book About A Topic ${i + 1}`, author: `Burak Onat`, pages, isRead: read})
     }   
 }
-addBooks()
+
 // Submit New Book
 const bookForm = document.querySelector(".book-form")
 
