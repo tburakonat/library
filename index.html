@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Buraks Library</h1>
-    <button class="add-book">New Book</button>
+    <header class="navbar">
+        <h1>Burak's Library</h1>
+        <button data-open-modal class="open-modal">New Book</button>
+    </header>
     <div class="modal">
-        <h2>Add a new book</h2>
-        <form>
+        <div class="modal-header">
+            <h2>Add a new book</h2>
+            <button data-close-modal id="close-modal">&times;</button>
+        </div>
+        <form action="" class="book-form" name="book-form">
             <label for="title">Title</label>
-            <input type="text" name="title" id="title">
+            <input type="text" id="title" required>
             <label for="author">Author</label>
-            <input type="text" name="author" id="author">
+            <input type="text" id="author" required>
             <label for="pages">Pages</label>
-            <input type="number" id="pages">
-            <label for="isRead">Already Read?</label>
-            <input type="checkbox" name="isRead" id="isRead">
+            <input type="number" id="pages" required>
+            <label for="isRead">Already Read? <input type="checkbox" id="isRead"></label>
             <button>Add Book To Library</button>
         </form>
     </div>
     <section id="books"></section>
-    
+    <div id="overlay"></div>
     <script src="script.js"></script>
 </body>
 </html>
