@@ -65,6 +65,7 @@ function removeBook(e) {
     const bookCard = btn.closest(".book-card")
     const bookTitle = bookCard.children[0].textContent
     library = library.filter(book => '"' + book.title + '"' !== bookTitle)
+    localStorage.setItem("library", JSON.stringify(library))
     bookCard.remove()
 }
 
