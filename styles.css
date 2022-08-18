@@ -1,207 +1,227 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    font-family: 'Rubik', sans-serif;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	font-family: 'Rubik', sans-serif;
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px 15px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
-    background-color: rgba(255, 255, 255, 0.9);
-    position: sticky;
-    top: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px 15px;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
+	background-color: rgba(255, 255, 255, 0.9);
+	position: sticky;
+	top: 0;
 }
 
 .navbar h1 {
-    font-weight: 300;
-    letter-spacing: 2px;
+	font-weight: 300;
+	letter-spacing: 2px;
 }
 
 .navbar button {
-    border: none;
-    background-color: transparent;
-    font-weight: 300;
-    font-family: 'Rubik', sans-serif;
-    padding: 5px;
-    border-radius: 5px;
-    transition: all 100ms ease-in;
+	border: none;
+	background-color: transparent;
+	font-weight: 300;
+	font-family: 'Rubik', sans-serif;
+	padding: 5px;
+	border-radius: 5px;
+	transition: all 100ms ease-in;
 }
 
 .navbar button:hover {
-    cursor: pointer;
-    background-color: lightgray;
+	cursor: pointer;
+	background-color: lightgray;
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    transition: 300ms ease-in-out;
-    border: 2px solid black;
-    width: 500px;
-    height: 500px;
-    z-index: 1;
-    background-color: white;
-    border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	transition: 300ms ease-in-out;
+	border: 2px solid black;
+	width: 500px;
+	height: 500px;
+	z-index: 1;
+	background-color: white;
+	border-radius: 15px;
 }
 
 .modal.active {
-    transform: translate(-50%, -50%) scale(1);
+	transform: translate(-50%, -50%) scale(1);
 }
 
 .modal-header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
 }
 
 .modal-header h2 {
-    text-transform: uppercase;
-    letter-spacing: 2px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 .modal-header button {
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    border-radius: 25px;
-    padding-block: 10px;
-    padding-inline: 15px;
-    transition: all 200ms ease-in;
+	font-size: 20px;
+	background-color: transparent;
+	border: none;
+	border-radius: 25px;
+	padding-block: 10px;
+	padding-inline: 15px;
+	transition: all 200ms ease-in;
 }
 
 .modal-header button:hover {
-    background-color: tomato;
+	background-color: tomato;
 }
 
 .modal form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 300px;
-    height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 300px;
+	height: 300px;
 }
 
 .modal form label {
-    margin-top: 10px;
-    align-self: flex-start;
+	margin-top: 10px;
+	align-self: flex-start;
 }
 
-.modal form input[type="text"],
-.modal form input[type="number"] {
-    padding: 5px;
-    height: 30px;
-    width: 300px;
+.modal form input[type='text'],
+.modal form input[type='number'] {
+	padding: 5px;
+	height: 30px;
+	width: 300px;
 }
 
-.modal form input[type="checkbox"] {
-    margin-left: 15px;
+.modal form input[type='checkbox'] {
+	margin-left: 15px;
 }
 
 .modal form button {
-    margin-top: 15px;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 200ms ease-in;
-    background-color: transparent;
+	margin-top: 15px;
+	border: none;
+	padding: 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 200ms ease-in;
+	background-color: transparent;
 }
 
 .modal form button:hover {
-    background-color: lightgreen;
+	background-color: lightgreen;
 }
 
 #overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    transition: 300ms ease-in-out;
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none; /* This makes our pointer events (clicks) work through the overlay */
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	transition: 300ms ease-in-out;
+	background-color: rgba(0, 0, 0, 0.5);
+	pointer-events: none; /* This makes our pointer events (clicks) work through the overlay */
 }
 
 #overlay.active {
-    opacity: 1;
-    pointer-events: all;
+	opacity: 1;
+	pointer-events: all;
 }
 
 #books {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    grid-auto-rows: 400px;
-    padding: 15px;
-    gap: 15px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	grid-auto-rows: 400px;
+	padding: 15px;
+	gap: 15px;
 }
 
 .book-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: lightgreen;
-    border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: lightgreen;
+	border-radius: 5px;
 }
 
 .book-title {
-    font-size: 20px;
-    font-weight: 700;
+	font-size: 20px;
+	font-weight: 700;
 }
 
 .book-author {
-    font-size: 18px;
-    font-weight: 300;
-    font-style: italic;
+	font-size: 18px;
+	font-weight: 300;
+	font-style: italic;
 }
 
 .book-pages {
-    font-weight: 200;
+	font-weight: 200;
 }
 
 .book-buttons {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .book-buttons button {
-    font-family: 'Rubik', sans-serif;
-    width: 200px;
-    height: 40px;
-    margin-top: 10px;
-    margin-inline: auto;
-    border: none;
-    border-radius: 5px;
-    background-color: lightgrey;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
+	font-family: 'Rubik', sans-serif;
+	width: 200px;
+	height: 40px;
+	margin-top: 10px;
+	margin-inline: auto;
+	border: none;
+	border-radius: 5px;
+	background-color: lightgrey;
+	transition: all 200ms ease-in-out;
+	cursor: pointer;
 }
 
 .book-buttons button.read {
-    background-color: greenyellow;
+	background-color: greenyellow;
 }
 
 .book-buttons button:not(.read):first-child {
-    background-color: tomato;
+	background-color: tomato;
+}
+
+/* Form Validation Styles */
+input {
+	outline: none;
+}
+
+.error {
+	width: 100%;
+	padding: 0;
+	font-size: 80%;
+	color: white;
+	background-color: #900;
+	border-radius: 0 0 5px 5px;
+
+	box-sizing: border-box;
+}
+
+.error.active {
+	padding: 0.3em;
 }
